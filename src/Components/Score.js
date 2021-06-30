@@ -1,6 +1,3 @@
-import React from 'react';
-import EpicodusScore from './MainContent';
-
 function winLoseMessage(score) {
   if (score === 0) {
     return "You lose!" 

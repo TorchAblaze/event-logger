@@ -33,16 +33,22 @@ class EpicodusScore extends React.Component {
     let decrementButtonVisibleState = null;
     let restartGame = null;
     if (this.state.score < 15 && this.state.score > 0) {
-      incrementButtonVisibleState = (
-        <Button onClick={this.incrementScore}>
+      incrementButtonVisibleState = [
+        <Button className="buttons" onClick={this.incrementScore}>
           Completes whiteboard problem
+        </Button>,
+        <Button className="buttons" onClick={this.incrementScore}>
+          Completes Friday Project on Time
         </Button>
-      );
-      decrementButtonVisibleState = (
-        <Button onClick={this.decrementScore}>
+      ];
+      decrementButtonVisibleState = [
+        <Button className="buttons" onClick={this.decrementScore}>
           Cries during white boarding session
+        </Button>,
+        <Button className="buttons" onClick={this.decrementScore}>
+          Burnout
         </Button>
-      );
+      ];
     } else if (this.state.score >= 15 || this.state.score <= 0) {
       restartGame = (
         <Button onClick={this.restartScore}>
