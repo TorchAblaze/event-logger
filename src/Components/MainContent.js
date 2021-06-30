@@ -22,6 +22,12 @@ class EpicodusScore extends React.Component {
     });
   };
 
+  restartScore = () => {
+    this.setState((prevState) => {
+      return {score: 5};
+    })
+  }
+
   render() {
     let incrementButtonVisibleState = null;
     let decrementButtonVisibleState = null;
@@ -37,9 +43,9 @@ class EpicodusScore extends React.Component {
           Cries during white boarding session
         </Button>
       );
-    } else if (this.state.score > 15 || this.state.score <= 0) {
+    } else if (this.state.score >= 15 || this.state.score <= 0) {
       restartGame = (
-        <Button onClick={this.state.score}>
+        <Button onClick={this.restartScore}>
           Play Again!
         </Button>
       )
