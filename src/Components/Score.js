@@ -9,10 +9,4 @@ function winLoseMessage(score) {
   }
 }
 
-// function winLoseMessage2(score) {
-//   return score === 0 ? : "You lose!"
-//         :score >= 15: "Get ready for that unpaid internship :D"
-//   score ? score === 0 : score >= 15
-// }
-
 export default winLoseMessage;
