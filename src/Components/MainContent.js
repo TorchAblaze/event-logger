@@ -1,6 +1,9 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import winLoseMessage from "./Score";
+import generateRandomNum from "./Random";
+import outPutMessage from "./OutputMessage";
+import $ from 'jquery'
 
 class EpicodusScore extends React.Component {
   constructor(props) {
@@ -9,6 +12,19 @@ class EpicodusScore extends React.Component {
       score: 5,
     };
   }
+
+  // componentDidMount() {
+  //   this.outPutMessage()
+  // }
+  // outPutMessage = () => 
+  // $(document).ready(function() {
+  //   $(".buttons").click(function(event) {
+  //     event.preventDefault()
+  //   })
+  
+  //   return $("#outputMessage").html(message)
+  // })
+
 
   incrementScore = () => {
     this.setState((prevState) => {
@@ -22,16 +38,27 @@ class EpicodusScore extends React.Component {
     });
   };
 
-  restartScore = () => {
+  randomNum = () => {
     this.setState((prevState) => {
-      return {score: 5};
+      const randomNum = generateRandomNum();
+      const randomNumMessage = randomNum;
+      const attendanceMessage = outPutMessage(randomNumMessage);
+      return {score: (prevState.score + randomNum)};
     })
   }
 
+  restartScore = () => {
+    this.setState(() => {
+      return {score: 5};
+    })
+  }
+  
   render() {
     let incrementButtonVisibleState = null;
     let decrementButtonVisibleState = null;
+    let attendClassButton = null;
     let restartGame = null;
+
     if (this.state.score < 15 && this.state.score > 0) {
       incrementButtonVisibleState = [
         <Button className="buttons" onClick={this.incrementScore}>
@@ -49,6 +76,9 @@ class EpicodusScore extends React.Component {
           Burnout
         </Button>
       ];
+      attendClassButton = [
+        <Button className="buttons" onClick={this.randomNum}>Attend Class</Button>
+      ];
     } else if (this.state.score >= 15 || this.state.score <= 0) {
       restartGame = (
         <Button onClick={this.restartScore}>
@@ -56,10 +86,13 @@ class EpicodusScore extends React.Component {
         </Button>
       )
     }
+
     return (
       <React.Fragment>
-        <h2>{this.state.score}</h2>
+        <div id="outputMessage"></div>
+        <h2>Score: {this.state.score}</h2>
         <h3>{winLoseMessage(this.state.score)}</h3>
+        {attendClassButton}
         {restartGame}
         {incrementButtonVisibleState}
         {decrementButtonVisibleState}
