@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "%7Busername%7D.github.io/event-logger/static/css/main.362d94d5.chunk.css",
+    "main.js": "%7Busername%7D.github.io/event-logger/static/js/main.28998a90.chunk.js",
+    "main.js.map": "%7Busername%7D.github.io/event-logger/static/js/main.28998a90.chunk.js.map",
+    "runtime-main.js": "%7Busername%7D.github.io/event-logger/static/js/runtime-main.c5e4edd6.js",
+    "runtime-main.js.map": "%7Busername%7D.github.io/event-logger/static/js/runtime-main.c5e4edd6.js.map",
+    "static/css/2.a5f06b7f.chunk.css": "%7Busername%7D.github.io/event-logger/static/css/2.a5f06b7f.chunk.css",
+    "static/js/2.7bebcd4c.chunk.js": "%7Busername%7D.github.io/event-logger/static/js/2.7bebcd4c.chunk.js",
+    "static/js/2.7bebcd4c.chunk.js.map": "%7Busername%7D.github.io/event-logger/static/js/2.7bebcd4c.chunk.js.map",
+    "static/js/3.9d509fbb.chunk.js": "%7Busername%7D.github.io/event-logger/static/js/3.9d509fbb.chunk.js",
+    "static/js/3.9d509fbb.chunk.js.map": "%7Busername%7D.github.io/event-logger/static/js/3.9d509fbb.chunk.js.map",
+    "index.html": "%7Busername%7D.github.io/event-logger/index.html",
+    "precache-manifest.6e3ab06df6d84996f2562b95f723f125.js": "%7Busername%7D.github.io/event-logger/precache-manifest.6e3ab06df6d84996f2562b95f723f125.js",
+    "service-worker.js": "%7Busername%7D.github.io/event-logger/service-worker.js",
+    "static/css/2.a5f06b7f.chunk.css.map": "%7Busername%7D.github.io/event-logger/static/css/2.a5f06b7f.chunk.css.map",
+    "static/css/main.362d94d5.chunk.css.map": "%7Busername%7D.github.io/event-logger/static/css/main.362d94d5.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c5e4edd6.js",
+    "static/css/2.a5f06b7f.chunk.css",
+    "static/js/2.7bebcd4c.chunk.js",
+    "static/css/main.362d94d5.chunk.css",
+    "static/js/main.28998a90.chunk.js"
+  ]
+}
