@@ -13,12 +13,6 @@ export function returnScore(score) {
   }
 }
 
-export function returnPoints(score, points) {
-  if (points !== null && score > 0 && score < 15) {
-    return `You scored ${points} points`;
-  }
-}
-
 export function returnMessage(score, message) {
   if (score > 0 && score < 15) {
     return message;

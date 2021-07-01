@@ -1,28 +1,31 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import generateRandomNum from "./Random";
 import outPutMessage from "./OutputMessage";
-import { returnMessage, winLoseMessage, returnPoints, returnScore } from "./Score";
-
+import { generateRandomNum, plusRandomNum, minusRandomNum } from "./Random";
+import { returnMessage, winLoseMessage, returnScore } from "./Score";
 class EpicodusScore extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       score: 5,
       attendanceMessage: null,
-      points: null
     };
   }
 
-  incrementScore = () => {
+  plusRandomNum = () => {
     this.setState((prevState) => {
-      return { score: prevState.score + 1 };
+      const updatedRandomNum = plusRandomNum()
+      this.setState({attendanceMessage: outPutMessage(updatedRandomNum)})
+      return { score: prevState.score + updatedRandomNum };
     });
   };
 
-  decrementScore = () => {
+
+  minusRandomNum = () => {
     this.setState((prevState) => {
-      return { score: prevState.score - 1 };
+      const updatedRandomNum = minusRandomNum()
+      this.setState({attendanceMessage: outPutMessage(updatedRandomNum)})
+      return { score: prevState.score + updatedRandomNum };
     });
   };
 
@@ -30,37 +33,38 @@ class EpicodusScore extends React.Component {
     this.setState((prevState) => {
       const randomNum = generateRandomNum();
       this.setState({attendanceMessage: outPutMessage(randomNum)});
-      this.setState({points: randomNum});
       return { score: prevState.score + randomNum };
     });
   };
 
+
+
   restartScore = () => {
     this.setState(() => {
-      return { score: 5, points: null, attendanceMessage: null };
+      return { score: 5, attendanceMessage: null };
     });
   };
 
   render() {
-    let incrementButtonVisibleState = null;
-    let decrementButtonVisibleState = null;
+    let plusRandomNum = null;
+    let minusRandomNum = null;
     let attendClassButton = null;
     let restartGame = null;
 
     if (this.state.score < 15 && this.state.score > 0) {
-      incrementButtonVisibleState = [
-        <Button className="buttons" onClick={this.incrementScore}>
+      plusRandomNum = [
+        <Button className="buttons" onClick={this.plusRandomNum}>
           Completes whiteboard problem
         </Button>,
-        <Button className="buttons" onClick={this.incrementScore}>
+        <Button className="buttons" onClick={this.plusRandomNum}>
           Completes Friday Project on Time
         </Button>,
       ];
-      decrementButtonVisibleState = [
-        <Button className="buttons" onClick={this.decrementScore}>
+        minusRandomNum = [
+        <Button className="buttons" onClick={this.minusRandomNum}>
           Cries during white boarding session
         </Button>,
-        <Button className="buttons" onClick={this.decrementScore}>
+        <Button className="buttons" onClick={this.minusRandomNum}>
           Burnout
         </Button>,
       ];
@@ -75,19 +79,14 @@ class EpicodusScore extends React.Component {
 
     return (
       <React.Fragment>
-       
-          {/* <h2>Score: {this.state.score}</h2>
-          <h2>You scored {this.state.points} points</h2>
-          <h3>{this.state.attendanceMessage}</h3> */}
         <h3>{returnScore(this.state.score)}</h3>
-        <h3>{returnPoints(this.state.score, this.state.points)}</h3>
         <h3>{returnMessage(this.state.score, this.state.attendanceMessage)}</h3>
 
         <h3>{winLoseMessage(this.state.score)}</h3>
         {attendClassButton}
         {restartGame}
-        {incrementButtonVisibleState}
-        {decrementButtonVisibleState}
+        {plusRandomNum}
+        {minusRandomNum}
       </React.Fragment>
     );
   }
