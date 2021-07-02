@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import outPutMessage from "./OutputMessage";
+import { outPutMessage, burnOut, fridayProject, whiteBoardFail, whiteBoardPass } from "./OutputMessage";
 import { generateRandomNum, plusRandomNum, minusRandomNum } from "./Random";
 import { returnMessage, winLoseMessage, returnScore } from "./Score";
 class EpicodusScore extends React.Component {
@@ -12,19 +12,36 @@ class EpicodusScore extends React.Component {
     };
   }
 
-  plusRandomNum = () => {
+  whiteBoardPassNum = () => {
     this.setState((prevState) => {
       const updatedRandomNum = plusRandomNum()
-      this.setState({attendanceMessage: outPutMessage(updatedRandomNum)})
+      this.setState({attendanceMessage: whiteBoardPass(updatedRandomNum)})
       return { score: prevState.score + updatedRandomNum };
     });
   };
 
-
-  minusRandomNum = () => {
+  
+  whiteBoardFailNum = () => {
     this.setState((prevState) => {
       const updatedRandomNum = minusRandomNum()
-      this.setState({attendanceMessage: outPutMessage(updatedRandomNum)})
+      this.setState({attendanceMessage: whiteBoardFail(updatedRandomNum)})
+      return { score: prevState.score + updatedRandomNum };
+    });
+  };
+  
+
+  fridayProjectNum = () => {
+    this.setState((prevState) => {
+      const updatedRandomNum = plusRandomNum()
+      this.setState({attendanceMessage: fridayProject(updatedRandomNum)})
+      return { score: prevState.score + updatedRandomNum };
+    });
+  };
+
+  burnOutNum = () => {
+    this.setState((prevState) => {
+      const updatedRandomNum = minusRandomNum()
+      this.setState({attendanceMessage: burnOut(updatedRandomNum)})
       return { score: prevState.score + updatedRandomNum };
     });
   };
@@ -53,18 +70,18 @@ class EpicodusScore extends React.Component {
 
     if (this.state.score < 15 && this.state.score > 0) {
       plusRandomNum = [
-        <Button className="buttons" onClick={this.plusRandomNum}>
+        <Button className="buttons" onClick={this.whiteBoardPassNum}>
           Completes whiteboard problem
         </Button>,
-        <Button className="buttons" onClick={this.plusRandomNum}>
+        <Button className="buttons" onClick={this.fridayProjectNum}>
           Completes Friday Project on Time
         </Button>,
       ];
         minusRandomNum = [
-        <Button className="buttons" onClick={this.minusRandomNum}>
+        <Button className="buttons" onClick={this.whiteBoardFailNum}>
           Cries during white boarding session
         </Button>,
-        <Button className="buttons" onClick={this.minusRandomNum}>
+        <Button className="buttons" onClick={this.burnOutNum}>
           Burnout
         </Button>,
       ];

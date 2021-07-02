@@ -1,5 +1,5 @@
 {
-  "homepage": "http://{username}.github.io/event-logger",
+  "homepage": "http://isaacrmoreno.github.io/event-logger",
   "name": "event-logger",
   "version": "0.1.0",
   "private": true,
@@ -22,8 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-}
-  ,
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
