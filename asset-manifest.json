@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/event-logger/static/css/main.362d94d5.chunk.css",
-    "main.js": "/event-logger/static/js/main.28998a90.chunk.js",
-    "main.js.map": "/event-logger/static/js/main.28998a90.chunk.js.map",
+    "main.js": "/event-logger/static/js/main.b55bb9b3.chunk.js",
+    "main.js.map": "/event-logger/static/js/main.b55bb9b3.chunk.js.map",
     "runtime-main.js": "/event-logger/static/js/runtime-main.bdd893eb.js",
     "runtime-main.js.map": "/event-logger/static/js/runtime-main.bdd893eb.js.map",
     "static/css/2.a5f06b7f.chunk.css": "/event-logger/static/css/2.a5f06b7f.chunk.css",
@@ -11,7 +11,7 @@
     "static/js/3.9d509fbb.chunk.js": "/event-logger/static/js/3.9d509fbb.chunk.js",
     "static/js/3.9d509fbb.chunk.js.map": "/event-logger/static/js/3.9d509fbb.chunk.js.map",
     "index.html": "/event-logger/index.html",
-    "precache-manifest.450c62cbace057d4cc6c400a43afc825.js": "/event-logger/precache-manifest.450c62cbace057d4cc6c400a43afc825.js",
+    "precache-manifest.679747967db46765a7860b75b42f1ea1.js": "/event-logger/precache-manifest.679747967db46765a7860b75b42f1ea1.js",
     "service-worker.js": "/event-logger/service-worker.js",
     "static/css/2.a5f06b7f.chunk.css.map": "/event-logger/static/css/2.a5f06b7f.chunk.css.map",
     "static/css/main.362d94d5.chunk.css.map": "/event-logger/static/css/main.362d94d5.chunk.css.map"
@@ -21,6 +21,6 @@
     "static/css/2.a5f06b7f.chunk.css",
     "static/js/2.7bebcd4c.chunk.js",
     "static/css/main.362d94d5.chunk.css",
-    "static/js/main.28998a90.chunk.js"
+    "static/js/main.b55bb9b3.chunk.js"
   ]
 }
